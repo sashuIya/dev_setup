@@ -1,39 +1,35 @@
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-" alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
+" Specify a directory for plugins
+" - For Neovim: ~/.local/share/nvim/plugged
+" - Avoid using standard Vim directory names like 'plugin'
+call plug#begin('~/.local/share/nvim/plugged')
 
-" let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
-
-Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'jasoncodes/ctrlp-modified.vim' 
-Plugin 'Valloric/YouCompleteMe'
-" Plugin 'rhysd/vim-clang-format'
-Plugin 'craigemery/vim-autotag'
-Plugin 'airblade/vim-gitgutter'
-Plugin 'vim-scripts/a.vim'
-Plugin 'scrooloose/nerdcommenter'
-Plugin 'rdnetto/YCM-Generator'
-Plugin 'jiangmiao/auto-pairs'
-Plugin 'francoiscabrol/ranger.vim'
-Plugin 'ggreer/the_silver_searcher'
-Plugin 'd11wtq/ctrlp_bdelete.vim'
-Plugin 'mileszs/ack.vim'
-Plugin 'tpope/vim-sleuth'
-Plugin 'vim-scripts/DoxygenToolkit.vim'
-Plugin 'chriskempson/base16-vim'
-Plugin 'Chiel92/vim-autoformat'
-Plugin 'gioele/vim-autoswap'
-Plugin 'tmhedberg/SimpylFold'
-Plugin 'brandonbloom/csearch.vim'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'jasoncodes/ctrlp-modified.vim' 
+Plug 'Valloric/YouCompleteMe', { 'branch': 'stable'}
+" Plug 'rhysd/vim-clang-format'
+Plug 'craigemery/vim-autotag'
+Plug 'airblade/vim-gitgutter'
+Plug 'vim-scripts/a.vim'
+Plug 'scrooloose/nerdcommenter'
+Plug 'rdnetto/YCM-Generator'
+Plug 'jiangmiao/auto-pairs'
+Plug 'francoiscabrol/ranger.vim'
+Plug 'ggreer/the_silver_searcher'
+Plug 'd11wtq/ctrlp_bdelete.vim'
+Plug 'mileszs/ack.vim'
+Plug 'tpope/vim-sleuth'
+Plug 'vim-scripts/DoxygenToolkit.vim'
+Plug 'chriskempson/base16-vim'
+Plug 'Chiel92/vim-autoformat'
+Plug 'gioele/vim-autoswap'
+Plug 'tmhedberg/SimpylFold'
+Plug 'brandonbloom/csearch.vim'
 
 " All of your Plugins must be added before the following line
-call vundle#end()            " required
+call plug#end()            " required
 filetype plugin indent on    " required
 " To ignore plugin indent changes, instead use:
 "filetype plugin on
