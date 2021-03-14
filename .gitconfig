@@ -1,28 +1,45 @@
 [alias]
-  # List alias
-  la = "!cat ~/.gitconfig"
+        # Standard stuff
+	a = add --all
+	b = branch
+	c = commit
+	ca = commit --amend
+	co = checkout
+	cob = checkout -b
+	crp = cherry-pick
+	d = diff
+	s = status
+	up = "!git fetch --all --prune && git rebase origin/master"
+	rim = rebase -i origin/master
+	rc = rebase --continue
 
-  # Pretty log
-  ls = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate
-  ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
-  ld = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=relative
-  le = log --oneline --decorate
+	edit = "!git rim"
 
-  ct = "!git branch -D $(git branch | grep _git-multi-pr--.*)"
+        # Pretty log
+	ls = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate
+	ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
+	ld = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=relative
+	le = log --oneline --decorate
 
-  # No colors (for Unix pipes)
-  lnc = log --pretty=format:"%h\\ %s\\ [%cn]"
-
-  # Standard
-  a = add --all
-  s = status
-  co = checkout
-  b = branch
-  cob = checkout -b
-  c = commit
-  ca = commit --amend
-  rim = rebase -i master
-  rem = rebase master
-  rc = rebase --continue
-
-  up = pull --rebase --prune
+        # Delete current branch
+	dcb = "!current_branch=$(git symbolic-ref --short -q HEAD) && git co master && git b -D $current_branch"
+[core]
+	pager = diff-so-fancy | less --tabs=4 -RFX
+	editor = nvim
+[interactive]
+	diffFilter = diff-so-fancy --patch
+[color]
+	ui = true
+[color "diff-highlight"]
+	oldNormal = red bold
+	oldHighlight = red bold 52
+	newNormal = green bold
+	newHighlight = green bold 22
+[color "diff"]
+	meta = 11
+	frag = magenta bold
+	func = 146 bold
+	commit = yellow bold
+	old = red bold
+	new = green bold
+	whitespace = red reverse
