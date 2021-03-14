@@ -1,14 +1,12 @@
-set nocompatible              " be iMproved, required
-filetype off                  " required
-
 " Specify a directory for plugins
-" - For Neovim: ~/.local/share/nvim/plugged
+" - For Neovim: stdpath('data') . '/plugged'
 " - Avoid using standard Vim directory names like 'plugin'
-call plug#begin('~/.local/share/nvim/plugged')
+call plug#begin('~/.config/nvim/plugged')
 
+" Make sure you use single quotes
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'jasoncodes/ctrlp-modified.vim' 
-Plug 'Valloric/YouCompleteMe', { 'branch': 'stable'}
+Plug 'ycm-core/YouCompleteMe'
 " Plug 'rhysd/vim-clang-format'
 Plug 'craigemery/vim-autotag'
 Plug 'airblade/vim-gitgutter'
@@ -24,12 +22,15 @@ Plug 'tpope/vim-sleuth'
 Plug 'vim-scripts/DoxygenToolkit.vim'
 Plug 'chriskempson/base16-vim'
 Plug 'Chiel92/vim-autoformat'
+Plug 'fisadev/vim-isort'
 Plug 'gioele/vim-autoswap'
 Plug 'tmhedberg/SimpylFold'
 Plug 'brandonbloom/csearch.vim'
+Plug 'christoomey/vim-tmux-navigator'
 
-" All of your Plugins must be added before the following line
-call plug#end()            " required
+" Initialize plugin system
+call plug#end()
+
 filetype plugin indent on    " required
 " To ignore plugin indent changes, instead use:
 "filetype plugin on
@@ -185,3 +186,6 @@ set shiftwidth=2
 set autoindent
 set smartindent
 set cindent
+
+set clipboard^=unnamed,unnamedplus
+
