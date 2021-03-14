@@ -224,7 +224,7 @@ for_window [class="^Spotify$"] floating enable
 exec_always --no-startup-id setxkbmap -layout "us,ru" -option "terminate:ctrl_alt_bksp,grp:caps_toggle,grp_led:scroll"
 
 # Wallpaper
-exec_always --no-startup-id feh --bg-fill ~/Pictures/ffea93f48874fe676868426787504ac2.jpg
+exec_always --no-startup-id feh --bg-fill ~/Pictures/wallpaper.jpg
 
 # Colors
 set_from_resource $darkred     color1  #000000
